@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('initial_check_up', function (Blueprint $table) {
             $table->id();
+            $table->float('weight');
+            $table->float('height');
+            $table->float('temperature');
+            $table->float('tension');
             $table->timestamps();
         });
     }

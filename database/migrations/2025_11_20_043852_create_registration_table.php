@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('registration', function (Blueprint $table) {
             $table->id();
+            $table->string('complaint');
+            $table->boolean('is_verified');
             $table->timestamps();
         });
     }
