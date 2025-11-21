@@ -17,6 +17,9 @@ return new class extends Migration
             $table->float('height');
             $table->float('temperature');
             $table->float('tension');
+            $table->foreignId('patient_id')->nullable()->constrained('patients')->onDelete('cascade');
+            $table->foreignId('doctor_id')->nullable()->constrained('doctors')->onDelete('cascade');
+            $table->foreignId('nurse_id')->nullable()->constrained('nurses')->onDelete('cascade');
             $table->timestamps();
         });
     }

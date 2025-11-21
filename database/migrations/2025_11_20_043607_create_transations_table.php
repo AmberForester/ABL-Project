@@ -16,6 +16,7 @@ return new class extends Migration
             $table->dateTime('date', 0);
             $table->float('amount');
             $table->boolean('is_paid');
+            $table->foreignId('patient_id')->nullable()->constrained('patients')->onDelete('cascade');
             $table->timestamps();
         });
     }

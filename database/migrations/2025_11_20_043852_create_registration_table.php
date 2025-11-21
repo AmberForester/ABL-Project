@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('complaint');
             $table->boolean('is_verified');
+            $table->foreignId('patient_id')->constrained('patients')->onDelete('cascade');
+            $table->foreignId('admin_id')->nullable()->constrained('admins')->onDelete('cascade');
             $table->timestamps();
         });
     }

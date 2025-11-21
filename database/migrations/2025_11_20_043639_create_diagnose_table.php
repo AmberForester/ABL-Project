@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('description');
             $table->string('follow_up');
+            $table->foreignId('doctor_id')->nullable()->constrained('doctors')->onDelete('cascade');
             $table->timestamps();
         });
     }
